@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Magang</title>
+</head>
+
+<body>
+
+    <h1>Form Pendaftaran Magang</h1>
+    <p>Silakan isi formulir berikut dengan data yang benar.</p>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+
+        <!-- FIELDSET DATA PRIBADI -->
+        <fieldset>
+            <legend>Data Pribadi</legend>
+
+            <p>
+                <label for="nama">Nama Lengkap:</label><br>
+                <input type="text"
+                       id="nama"
+                       name="nama"
+                       placeholder="Masukkan nama lengkap"
+                       required>
+            </p>
+
+            <p>
+                <label for="nim">NIM/NIS:</label><br>
+                <input type="text"
+                       id="nim"
+                       name="nim"
+                       placeholder="Contoh: 12345678"
+                       pattern="[0-9]{8,12}"
+                       title="NIM/NIS harus berupa 8-12 digit angka"
+                       required>
+            </p>
+
+            <p>
+                <label>Jenis Kelamin:</label><br>
+
+                <input type="radio"
+                       id="laki"
+                       name="jenis_kelamin"
+                       value="Laki-laki"
+                       required>
+                <label for="laki">Laki-laki</label>
+
+                <input type="radio"
+                       id="perempuan"
+                       name="jenis_kelamin"
+                       value="Perempuan">
+                <label for="perempuan">Perempuan</label>
+            </p>
+
+            <p>
+                <label for="tanggal_lahir">Tanggal Lahir:</label><br>
+                <input type="date"
+                       id="tanggal_lahir"
+                       name="tanggal_lahir"
+                       required>
+            </p>
+
+            <p>
+                <label for="telepon">Nomor HP:</label><br>
+                <input type="tel"
+                       id="telepon"
+                       name="telepon"
+                       placeholder="08xxxxxxxxxx"
+                       pattern="08[0-9]{8,11}"
+                       title="Nomor HP harus diawali 08 dan terdiri dari 10-13 digit"
+                       required>
+            </p>
+
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="contoh@email.com"
+                       required>
+            </p>
+
+            <p>
+                <label for="asal">Asal Sekolah/Kampus:</label><br>
+                <input list="daftar_kampus"
+                       id="asal"
+                       name="asal"
+                       placeholder="Pilih atau ketik nama sekolah/kampus"
+                       required>
+
+                <datalist id="daftar_kampus">
+                    <option value="Universitas Indonesia">
+                    <option value="Universitas Gadjah Mada">
+                    <option value="Institut Teknologi Bandung">
+                    <option value="Universitas Negeri Yogyakarta">
+                    <option value="Universitas Brawijaya">
+                    <option value="SMK Negeri 1 Pacitan">
+                    <option value="SMK Negeri 2 Pacitan">
+                </datalist>
+            </p>
+
+        </fieldset>
+
+
+        <br>
+
+
+        <!-- FIELDSET DATA MAGANG -->
+        <fieldset>
+            <legend>Data Magang</legend>
+
+            <p>
+                <label for="divisi">Pilihan Divisi Magang:</label><br>
+
+                <select id="divisi"
+                        name="divisi"
+                        required>
+
+                    <option value="">-- Pilih Divisi --</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="UI UX Design">UI/UX Design</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Data Analyst">Data Analyst</option>
+                    <option value="Administrasi">Administrasi</option>
+                    <option value="Content Creator">Content Creator</option>
+
+                </select>
+            </p>
+
+
+            <p>
+                <label>Keahlian yang Dimiliki:</label><br>
+
+                <input type="checkbox"
+                       id="html"
+                       name="keahlian[]"
+                       value="HTML">
+                <label for="html">HTML</label><br>
+
+                <input type="checkbox"
+                       id="css"
+                       name="keahlian[]"
+                       value="CSS">
+                <label for="css">CSS</label><br>
+
+                <input type="checkbox"
+                       id="javascript"
+                       name="keahlian[]"
+                       value="JavaScript">
+                <label for="javascript">JavaScript</label><br>
+
+                <input type="checkbox"
+                       id="php"
+                       name="keahlian[]"
+                       value="PHP">
+                <label for="php">PHP</label><br>
+
+                <input type="checkbox"
+                       id="desain"
+                       name="keahlian[]"
+                       value="Desain Grafis">
+                <label for="desain">Desain Grafis</label><br>
+
+                <input type="checkbox"
+                       id="marketing"
+                       name="keahlian[]"
+                       value="Digital Marketing">
+                <label for="marketing">Digital Marketing</label>
+            </p>
+
+
+            <p>
+                <label for="tanggal_mulai">Rencana Tanggal Mulai Magang:</label><br>
+                <input type="date"
+                       id="tanggal_mulai"
+                       name="tanggal_mulai"
+                       required>
+            </p>
+
+
+            <p>
+                <label for="durasi">Durasi Magang:</label><br>
+
+                <select id="durasi"
+                        name="durasi"
+                        required>
+
+                    <option value="">-- Pilih Durasi --</option>
+                    <option value="1 Bulan">1 Bulan</option>
+                    <option value="2 Bulan">2 Bulan</option>
+                    <option value="3 Bulan">3 Bulan</option>
+                    <option value="6 Bulan">6 Bulan</option>
+
+                </select>
+            </p>
+
+
+            <p>
+                <label for="alasan">Alasan Mengikuti Magang:</label><br>
+
+                <textarea id="alasan"
+                          name="alasan"
+                          rows="6"
+                          cols="50"
+                          placeholder="Tuliskan alasan Anda mengikuti program magang..."
+                          required></textarea>
+            </p>
+
+        </fieldset>
+
+
+        <br>
+
+
+        <!-- FIELDSET DOKUMEN -->
+        <fieldset>
+            <legend>Dokumen Pendukung</legend>
+
+            <p>
+                <label for="cv">Upload CV:</label><br>
+                <input type="file"
+                       id="cv"
+                       name="cv"
+                       accept=".pdf,.doc,.docx"
+                       required>
+            </p>
+
+            <p>
+                <label for="portofolio">Upload Portofolio (Opsional):</label><br>
+                <input type="file"
+                       id="portofolio"
+                       name="portofolio"
+                       accept=".pdf,.zip,.rar">
+            </p>
+
+        </fieldset>
+
+
+        <br>
+
+
+        <!-- PERSETUJUAN -->
+        <fieldset>
+            <legend>Persetujuan</legend>
+
+            <p>
+                <input type="checkbox"
+                       id="persetujuan"
+                       name="persetujuan"
+                       value="setuju"
+                       required>
+
+                <label for="persetujuan">
+                    Saya menyatakan bahwa data yang saya isi adalah benar
+                    dan dapat dipertanggungjawabkan.
+                </label>
+            </p>
+
+        </fieldset>
+
+
+        <br>
+
+
+        <!-- BUTTON -->
+        <button type="submit">Daftar Magang</button>
+
+        <button type="reset">Reset Form</button>
+
+    </form>
+
+</body>
+</html>

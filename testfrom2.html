@@ -1,0 +1,137 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Study Tour</title>
+</head>
+
+<body>
+    <h1>Form Pendaftaran Study Tour</h1>
+
+    <form action="http://rplcoders.com/proses.php" method="post"
+        enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Data Pribadi</legend>
+
+            <label for="nama">Nama Lengkap</label><br>
+            <input required type="text" name="nama" id="nama"
+                placeholder="Ketikkan nama lengkap"><br>
+
+            <label for="nis">NIS</label><br>
+            <input required type="text" name="nis" id="nis"
+                placeholder="Ketikkan NIS"><br>
+
+            <label for="tglahir">Tanggal Lahir</label><br>
+            <input type="date" name="tglahir" id="tglahir"><br>
+
+            <label for="alamat">Alamat Lengkap</label><br>
+            <textarea name="alamat" id="alamat" cols="30" rows="5"></textarea><br>
+
+            <label for="jk">Jenis Kelamin</label><br>
+            <input checked type="radio" name="jk" id="jk1" value="1">
+            Laki-Laki
+
+            <input type="radio" name="jk" id="jk2" value="2">
+            Perempuan
+            <br>
+
+            <label for="kelas">Kelas</label><br>
+            <select name="kelas" id="kelas">
+                <option value="xrpl1">X RPL 1</option>
+                <option value="xrpl2">X RPL 2</option>
+                <option value="xtkj1">X TKJ 1</option>
+                <option value="xtkkr1">X TKKR 1</option>
+            </select><br>
+
+            <label for="foto">Pas Foto</label><br>
+            <input type="file" name="foto" id="foto">
+        </fieldset>
+
+        <fieldset>
+            <legend>Data Study Tour</legend>
+
+            <label for="tujuan">Tujuan Study Tour</label><br>
+            <select name="tujuan" id="tujuan">
+                <option value="yogyakarta">Yogyakarta</option>
+                <option value="bandung">Bandung</option>
+                <option value="jakarta">Jakarta</option>
+                <option value="bali">Bali</option>
+            </select><br>
+
+            <label for="tanggal">Tanggal Keberangkatan</label><br>
+            <input required type="date" name="tanggal" id="tanggal"><br>
+
+            <label>Transportasi</label><br>
+            <input checked type="radio" name="transportasi"
+                id="bus" value="bus">
+            <label for="bus">Bus</label>
+
+            <input type="radio" name="transportasi"
+                id="kereta" value="kereta">
+            <label for="kereta">Kereta</label>
+
+            <input type="radio" name="transportasi"
+                id="pesawat" value="pesawat">
+            <label for="pesawat">Pesawat</label>
+            <br>
+
+            <label>Tempat yang Ingin Dikunjungi</label><br>
+            <input type="checkbox" name="tempat[]" id="museum"
+                value="museum">
+            <label for="museum">Museum</label><br>
+
+            <input type="checkbox" name="tempat[]" id="wisata"
+                value="wisata">
+            <label for="wisata">Tempat Wisata</label><br>
+
+            <input type="checkbox" name="tempat[]" id="kampus"
+                value="kampus">
+            <label for="kampus">Kampus / Institusi Pendidikan</label><br>
+
+            <input type="checkbox" name="tempat[]" id="pusatbelanja"
+                value="pusatbelanja">
+            <label for="pusatbelanja">Pusat Perbelanjaan</label><br><br>
+
+            <label for="alasan">Alasan Mengikuti Study Tour</label><br>
+            <textarea name="alasan" id="alasan"
+                cols="30" rows="5"
+                placeholder="Tuliskan alasan Anda mengikuti study tour"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Data Tambahan</legend>
+
+            <label for="nohp">Nomor HP</label><br>
+            <input type="tel" name="nohp" id="nohp"
+                placeholder="08xxxxxxxxxx"><br>
+
+            <label for="kontak">Nama Orang Tua / Wali</label><br>
+            <input type="text" name="kontak" id="kontak"
+                placeholder="Nama orang tua / wali"><br>
+
+            <label for="catatan">Catatan Khusus</label><br>
+            <textarea name="catatan" id="catatan"
+                cols="30" rows="4"
+                placeholder="Tuliskan catatan jika ada"></textarea>
+        </fieldset>
+
+        <label for="token">Token Pendaftaran</label>
+        <input required type="password" name="token" id="token">
+
+        <br><br>
+
+        <button type="submit">Daftar Study Tour</button>
+
+        <button onclick="return confirm('Apakah Anda yakin ingin mereset form?')"
+            type="reset">
+            Reset
+        </button>
+
+    </form>
+</body>
+
+</html>

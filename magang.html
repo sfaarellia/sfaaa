@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Form Pendaftaran Magang</title>
+</head>
+<body>
+
+<h1>Form Pendaftaran Magang</h1>
+
+<form action=" https://rplcoders.com/proses.php" method="post">
+
+<fieldset>
+<legend>Data Diri</legend>
+
+Nama:
+<input type="text" name="nama" required><br><br>
+
+NIM:
+<input type="text" name="nim" pattern="[0-9]{8,12}"
+       title="NIM 8-12 digit" required><br><br>
+
+Tanggal Lahir:
+<input type="date" name="tanggal" required><br><br>
+
+Jenis Kelamin:
+<input type="radio" name="jk" value="L"> Laki-laki
+<input type="radio" name="jk" value="P"> Perempuan
+<br><br>
+
+Asal Sekolah/Kampus:
+<input list="kampus" name="asal">
+<datalist id="kampus">
+    <option value="Universitas Indonesia">
+    <option value="Universitas Gadjah Mada">
+    <option value="SMK Negeri 1 Pacitan">
+</datalist>
+
+</fieldset>
+
+<br>
+
+<fieldset>
+<legend>Data Magang</legend>
+
+Divisi:
+<select name="divisi">
+    <option>Web Development</option>
+    <option>UI/UX Design</option>
+    <option>Digital Marketing</option>
+</select>
+<br><br>
+
+Keahlian:<br>
+<input type="checkbox" name="skill"> HTML
+<input type="checkbox" name="skill"> CSS
+<input type="checkbox" name="skill"> JavaScript
+<br><br>
+
+<p>
+                <label>Keahlian yang Dimiliki:</label><br>
+
+                <input type="checkbox"
+                       id="html"
+                       name="keahlian[]"
+                       value="HTML">
+                <label for="html">HTML</label><br>
+
+                <input type="checkbox"
+                       id="css"
+                       name="keahlian[]"
+                       value="CSS">
+                <label for="css">CSS</label><br>
+
+                <input type="checkbox"
+                       id="javascript"
+                       name="keahlian[]"
+                       value="JavaScript">
+                <label for="javascript">JavaScript</label><br>
+
+                <input type="checkbox"
+                       id="php"
+                       name="keahlian[]"
+                       value="PHP">
+                <label for="php">PHP</label><br>
+
+                <input type="checkbox"
+                       id="desain"
+                       name="keahlian[]"
+                       value="Desain Grafis">
+                <label for="desain">Desain Grafis</label><br>
+
+                <input type="checkbox"
+                       id="marketing"
+                       name="keahlian[]"
+                       value="Digital Marketing">
+                <label for="marketing">Digital Marketing</label>
+            </p>
+
+Alasan Magang:<br>
+<textarea name="alasan" rows="4" cols="40"></textarea>
+<br><br>
+
+ <p>
+                <label for="durasi">Durasi Magang:</label><br>
+
+                <select id="durasi"
+                        name="durasi"
+                        required>
+
+                    <option value="">-- Pilih Durasi --</option>
+                    <option value="1 Bulan">1 Bulan</option>
+                    <option value="2 Bulan">2 Bulan</option>
+                    <option value="3 Bulan">3 Bulan</option>
+                    <option value="6 Bulan">6 Bulan</option>
+
+                </select>
+            </p>
+
+
+Upload CV:
+<input type="file" name="cv" required>
+
+</fieldset>
+
+<br>
+
+Nomor HP:
+<input type="tel" name="hp"
+       pattern="08[0-9]{8,11}"
+       title="Nomor harus diawali 08"><br><br>
+
+<button type="submit">Daftar</button>
+<button type="reset">Reset</button>
+
+</form>
+
+</body>
+</html>

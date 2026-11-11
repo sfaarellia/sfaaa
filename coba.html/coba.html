@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <style>
+        table, th, td {
+            border: 1px solid powderblue;
+            border-collapse: collapse;
+            padding: 6px;
+        }
+ 
+        table {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <table id="naruto-chars">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Character Name</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <!-- tbody cukup dikosongkan karena akan diisi dari JSON -->
+        <tbody></tbody>
+    </table>    
+    
+    <script>
+        // ambil JSON dari server API
+        $.getJSON('https://dattebayo-api.onrender.com/characters', function(data) {
+            // modifikasi tabel yang sudah disiapkan dengan 
+            // menyisipkan baris dari JSON
+            $('#naruto-chars tbody').html(
+                $.map(data.characters, char => 
+                    `<tr><td>${char.id}</td>
+                    <td>${char.name}</td>
+                    <td><img src="${char.images[0]}" width="100"></td>
+                    </tr>`
+                ).join('')
+            );
+        });
+    </script>
+</body>
+</html>
